@@ -61,7 +61,7 @@ class UserController extends Controller
             'password' => Hash::make($user['password']),
         ]);
 
-        return to_route('admin.users.index')->with('success', '新規登録完了');
+        return to_route('admin.users.index');
     }
 
     /**
@@ -70,14 +70,14 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $user)
     {
         $user_validated = $request->validated();
-        
+
         $user->update([
             'name' => $user_validated['name'],
             'email' => $user_validated['email'],
             'password' => Hash::make($user_validated['password']),
         ]);
 
-        return to_route('admin.users.index')->with('success', 'タスクを更新しました。');
+        return to_route('admin.users.index');
     }
 
     /**
@@ -87,7 +87,7 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return to_route('admin.users.index')->with('success', 'タスクを削除しました。');
+        return to_route('admin.users.index');
     }
 
 }

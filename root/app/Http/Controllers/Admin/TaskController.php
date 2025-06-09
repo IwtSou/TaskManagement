@@ -41,7 +41,7 @@ class TaskController extends Controller
     {
         Task::create($request->validated());
 
-        return to_route('admin.tasks.index')->with('success', 'タスクを作成しました。');
+        return to_route('admin.tasks.index');
     }
 
     /**
@@ -51,7 +51,7 @@ class TaskController extends Controller
     {
         $task->update($request->validated());
 
-        return to_route('admin.tasks.index')->with('success', 'タスクを更新しました。');
+        return to_route('admin.tasks.index');
     }
 
     /**
@@ -61,6 +61,6 @@ class TaskController extends Controller
     {
         $task->delete();
 
-        return to_route('admin.tasks.index')->with('success', 'タスクを削除しました。');
+        return to_route('admin.tasks.index');
     }
 }
